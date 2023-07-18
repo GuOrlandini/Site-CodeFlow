@@ -6,5 +6,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  activeButton: string = 'home';
 
+  setActiveButton(button: string): void {
+    this.activeButton = button;
+  }
 }
