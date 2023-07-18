@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -6,9 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-  activeButton: string = 'home';
-
-  setActiveButton(button: string): void {
-    this.activeButton = button;
+  constructor(private router: Router) {}
+  isHomeActive: boolean = false;
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isHomeActive = (event.urlAfterRedirects === '/');
+        
+      }
+    });
+  }
+  
+  isActive(url: string): boolean {
+    return this.router.isActive(url, false);
   }
 }
+

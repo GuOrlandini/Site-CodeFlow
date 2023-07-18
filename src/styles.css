@@ -14,14 +14,6 @@
     font-style: normal;
   }
 
-body {
-    background-color: #181443;
-    background-image: url("src/assets/images/logobg.png");
-    background-repeat: repeat;
-
-    
-    
-}
 
 * {
     margin: 0;
@@ -35,6 +27,15 @@ a {
   transition: 0.4s;
 }
 
-nav ul li a.active {
-  color: #181443; 
+
+.black-background {
+  background-color: #181443;
+  background-image: url("src/assets/images/logobg.png");
+  background-repeat: repeat;
+}
+
+.white-background {
+  background-color: #F8F8F8;
+  background-image: url("src/assets/images/logobg.png");
+  background-repeat: repeat;
 }
